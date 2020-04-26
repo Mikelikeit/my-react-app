@@ -10,8 +10,7 @@ const Users = (props) => {
     const handlePageClick = e => {
         const { pageId } = e.target.dataset;
         e.preventDefault();
-        console.log(pageId);
-        pageId && props.onPageChanged(+pageId);
+        pageId && props.onPageChanged(Number(pageId));
     }
     let pages = [];
 
@@ -20,7 +19,7 @@ const Users = (props) => {
             <span
                 key={`page_${i}`}
                 data-page-id={i}
-                className={cn(s.page, {[s.selectPage]: props.currentPage === i })}
+                className={cn(s.page, { [s.selectPage]: props.currentPage === i })}
                 onClick={handlePageClick}>
                 {i}
             </span>
