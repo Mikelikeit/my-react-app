@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './Dialogs.module.css'
+import styles from './Dialogs.module.css'
 import DialogsItems from "./DialogsItems/DItems";
 import MessagesItems from "./MessagesItems/MessgaesItems";
 
@@ -11,7 +11,7 @@ const Dialogs = (props) => {
         .map(d => <DialogsItems name={d.name} id={d.id}/>)
 
     let messageElement = props.messages
-        .map(m => <MessagesItems message={m.message}/>)
+        .map(m => <MessagesItems message={m.message} id={m.id}/>)
     let newMessageElement = React.createRef()
 
     let onAddMessage = () => {
@@ -24,11 +24,11 @@ const Dialogs = (props) => {
         props.updateNewMessage(text)
     }
     return (
-        <div className={s.dialogs}>
-            <div className={s.dialogsItems}>
+        <div className={styles.dialogs}>
+            <div className={styles.dialogsItems}>
                 {dialogElement}
             </div>
-            <div className={s.messages}>
+            <div className={styles.messages}>
                 {messageElement}
             </div>
             <div>

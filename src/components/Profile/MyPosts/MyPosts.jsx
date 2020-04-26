@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './MyPosts.module.css'
+import styles from './MyPosts.module.css'
 import Post from "./Post/Post";
 
 
@@ -22,7 +22,7 @@ const MyPosts = (props) => {
     return (
         <div>
 
-            <div className={s.profile}>
+            <div className={styles.profile}>
                 <div>
                     <div>
                         <img src='https://www.meme-arsenal.com/memes/85ea5e50b5d7cc992a728c20803814e9.jpg'/>
@@ -31,7 +31,7 @@ const MyPosts = (props) => {
                         ava + description
                     </div>
                     <div>
-                        <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText} />
+                        <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText}/>
                     </div>
                     <div>
                         <button onClick={onAddPost}>Add post</button>
@@ -40,7 +40,7 @@ const MyPosts = (props) => {
                 </div>
 
             </div>
-            <div className={s.myposts}>
+            <div className={styles.myposts}>
                 <div>
                     {postElement}
                 </div>

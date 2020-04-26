@@ -1,6 +1,6 @@
 import {connect} from "react-redux";
 import {followAC, setCurrentPageAC, setTotalUsersCountAC, setUsersAC, unFollowAC} from "../../Redux/usersReducer";
-import React from "react";
+import React from "react"
 import * as axios from "axios";
 import Users from "./Users";
 
@@ -25,13 +25,13 @@ class UsersContainer extends React.Component {
 
 
     render() {
-        return <Users totalUsersCount = {this.props.totalUsersCount}
-                      users = {this.props.users}
-                      pageSize = {this.props.pageSize}
-                      currentPage= {this.props.currentPage}
-                      onPageChanged = {this.onPageChanged}
-                      follow = {this.props.follow}
-                      unFollow = {this.props.unFollow}/>
+        return <Users totalUsersCount={this.props.totalUsersCount}
+                      users={this.props.users}
+                      pageSize={this.props.pageSize}
+                      currentPage={this.props.currentPage}
+                      onPageChanged={this.onPageChanged}
+                      follow={this.props.follow}
+                      unFollow={this.props.unFollow}/>
 
     }
 }

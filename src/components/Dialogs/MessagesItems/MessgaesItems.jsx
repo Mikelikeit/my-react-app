@@ -1,9 +1,9 @@
 import React from 'react';
-import s from '../Dialogs.module.css'
+import styles from '../Dialogs.module.css'
 
 const MessagesItems = (props) => {
     return (
-        <div className={s.messageItem}>
+        <div className={styles.messageItem}>
             <div>{props.message}</div>
         </div>
     )
