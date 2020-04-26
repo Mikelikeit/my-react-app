@@ -2,6 +2,8 @@ import React from 'react';
 import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../Redux/profileReducer";
 import MyPosts from "./MyPosts";
 import {connect} from "react-redux";
+// TODO: для байндинга dispatch
+// import { bindActionCreators } from "redux";
 
 
 let mapStateToProps = (state) => {
@@ -11,6 +13,16 @@ let mapStateToProps = (state) => {
     }
 }
 
+// TODO: тут можно заюзать bindActionCreators (https://redux.js.org/api/bindactioncreators)
+/* bindActionCreators делает тоже самое
+ Переписать так:
+ const mapDispatchToProps = dispatch => {
+    return bindActionCreators(dispatch, {
+        addPost: addPostActionCreator,
+        updateNewPostText: updateNewPostTextActionCreator,
+    });
+ };
+ */
 let mapDispatchToProps = (dispatch) => {
     return {
         addPost: () => {
