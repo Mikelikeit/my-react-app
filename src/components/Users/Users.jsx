@@ -1,6 +1,6 @@
 import React from "react";
 import cn from "classnames";
-import s from './Users.module.css'
+import styles from './Users.module.css'
 import userPhoto from '../../assets/images/images.png'
 
 const Users = (props) => {
@@ -19,48 +19,50 @@ const Users = (props) => {
             <span
                 key={`page_${i}`}
                 data-page-id={i}
-                className={cn(s.page, { [s.selectPage]: props.currentPage === i })}
+                className={cn(styles.page, { [styles.selectPage]: props.currentPage === i })}
                 onClick={handlePageClick}>
                 {i}
             </span>
         );
     }
 
-    return <div>
+    return (
         <div>
-            {pages}
+            { /** TODO: Даже если стилей нет, то класс все равно нужен */ }
+            <div className={styles.pagesList}>
+                {pages}
+            </div>
+
+            {props.users.map(u => <div key={u.id}>
+                <div className={styles.users}>
+                    <img src={u.photos.small !== null ? u.photos.small : userPhoto} />
+                </div>
+                <div>
+                    {
+                        /* TODO: Тут в цикле создаются анонимные функции == просадка производительности */
+                        /* нужно сделать анадогично handlePageClick и передать параметры через data-атрибуты */
+                        u.followed ?
+                            <button onClick={() => { props.follow(u.id) }}>Follow</button>
+                            :
+                            <button onClick={() => { props.unFollow(u.id) }}>Unfollow</button>
+                    }
+                </div>
+                <div>
+                    {u.name}
+                </div>
+                <div>
+                    {u.status}
+                </div>
+                <div>
+                    {"u.location.country"}
+                </div>
+                <div>
+                    {"u.location.city"}
+                </div>
+            </div>)}
         </div>
-
-        {props.users.map(u => <div key={u.id}>
-            <div className={s.users}>
-                <img src={u.photos.small != null ? u.photos.small : userPhoto} />
-            </div>
-            <div>
-                {u.followed ? <button onClick={() => {
-                    props.follow(u.id)
-                }}>Follow</button>
-                    : <button onClick={() => {
-                        props.unFollow(u.id)
-                    }}>Unfollow</button>}
-            </div>
-            <div>
-                {u.name}
-            </div>
-            <div>
-                {u.status}
-            </div>
-            <div>
-                {"u.location.country"}
-            </div>
-            <div>
-                {"u.location.city"}
-            </div>
-
-
-        </div>)}
-    </div>
+    );
 }
-
 
 export default Users
 
