@@ -1,0 +1,11 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    margin: 10px 0px 0px 100px ;
+}
+
+.dialog img {
+    height: 60px;
+    width: 60px;
+    border-radius: 30px;
+}

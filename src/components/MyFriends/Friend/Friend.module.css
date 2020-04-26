@@ -1,0 +1,9 @@
+.friendItem {
+    font-size: 20px;
+}
+
+.friendItem img {
+    height: 60px;
+    width: 60px;
+    border-radius: 30px;
+}

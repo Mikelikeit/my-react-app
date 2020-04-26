@@ -1,0 +1,9 @@
+.friendsItems {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.friends {
+    margin-top: 40px;
+    font-size: 25px;
+}
