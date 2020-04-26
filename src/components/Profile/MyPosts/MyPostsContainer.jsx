@@ -14,7 +14,7 @@ let mapStateToProps = (state) => {
 }
 
 // TODO: тут можно заюзать bindActionCreators (https://redux.js.org/api/bindactioncreators)
-/* bindActionCreators делает тоже самое
+/* bindActionCreators делает то же самое
  Переписать так:
  const mapDispatchToProps = dispatch => {
     return bindActionCreators(dispatch, {
