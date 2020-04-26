@@ -30,7 +30,7 @@ const profileReducer = (state = initialState, action) => {
             return state
     }
 }
-
+// TODO: не храним actions вместе с reducers
 export const addPostActionCreator = () => ({type: 'ADD-POST'})
 export const updateNewPostTextActionCreator = (text) => ({type: 'UPDATE-NEW-POST-TEXT', newText: text})
 

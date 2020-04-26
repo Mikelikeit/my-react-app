@@ -3,16 +3,16 @@ const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
 
 let initialState = {
     messages: [
-        {id: 1, message: 'Hi!'},
-        {id: 2, message: 'Do you like coding?'},
-        {id: 3, message: 'Yes! I like it'}
+        { id: 1, message: 'Hi!' },
+        { id: 2, message: 'Do you like coding?' },
+        { id: 3, message: 'Yes! I like it' }
     ],
     dialogs: [
-        {id: 1, name: 'Alex'},
-        {id: 2, name: 'Mike'},
-        {id: 3, name: 'Julia'},
-        {id: 4, name: 'Dima'},
-        {id: 5, name: 'Igor'}
+        { id: 1, name: 'Alex' },
+        { id: 2, name: 'Mike' },
+        { id: 3, name: 'Julia' },
+        { id: 4, name: 'Dima' },
+        { id: 5, name: 'Igor' }
     ],
     newMessageText: ''
 }
@@ -24,7 +24,7 @@ const dialogsReducer = (state = initialState, action) => {
             return {
                 ...state,
                 newMessageText: '',
-                messages: [...state.messages, {id: 4, message: newText}]
+                messages: [...state.messages, { id: 4, message: newText }]
             }
         case UPDATE_NEW_MESSAGE_TEXT:
             return {
@@ -37,8 +37,12 @@ const dialogsReducer = (state = initialState, action) => {
 
 }
 
-export const addMessageCreator = () => ({type: 'ADD-MESSAGE'})
-export const updateNewMessageTextCreator = (text) => ({type: 'UPDATE-NEW-MESSAGE-TEXT', newText: text})
+// TODO: Принято константы именовать через символ _ -> const ADD_MESSAGE = 'ADD_MESSAGE';
+// TODO: Обычно их хранят там же, где и actions
+// экшены внизу надо перенести в отдельную директорию actions в файл messages
+// создать директорию reducers и перенести редьюсеры туда
+export const addMessageCreator = () => ({ type: 'ADD-MESSAGE' })
+export const updateNewMessageTextCreator = (text) => ({ type: 'UPDATE-NEW-MESSAGE-TEXT', newText: text })
 
 export default dialogsReducer
 
